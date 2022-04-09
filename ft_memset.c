@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minitalk.h                                         :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lchokri <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/06 09:44:09 by lchokri           #+#    #+#             */
-/*   Updated: 2022/04/09 15:28:36 by lchokri          ###   ########.fr       */
+/*   Created: 2021/11/10 14:49:53 by lchokri           #+#    #+#             */
+/*   Updated: 2022/04/09 12:21:33 by lchokri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
+#include "minitalk.h"
 
-/* leaks f str_bin !!!!!!!
- * we have to freee the ptr
- * we allocated
- * just don't forget
- * kay bye*/
-int		ft_atoi(char *str);
-size_t	ft_strlen(char *s);
-void	*ft_calloc(size_t count, size_t size);
-void	*ft_memset(void *b, int c, size_t len);
-char	message;
-pid_t	c_pid;
+void	*ft_memset(void *b, int c, size_t len)
+{
+	size_t			i;
+	unsigned char	*p;
+
+	i = 0;
+	p = (unsigned char *)b;
+	while (i < len)
+	{
+		p[i] = c;
+		i++;
+	}
+	return (b);
+}
