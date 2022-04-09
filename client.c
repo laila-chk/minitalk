@@ -6,7 +6,7 @@
 /*   By: lchokri <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 09:06:20 by lchokri           #+#    #+#             */
-/*   Updated: 2022/04/08 22:20:22 by lchokri          ###   ########.fr       */
+/*   Updated: 2022/04/09 23:50:28 by lchokri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	c_handler()
 
 int main(int c, char **v)
 {
-	int	pid;
+	int		pid;
 	char	*msg;
 
 	signal(SIGUSR2, c_handler);
@@ -55,7 +55,8 @@ int main(int c, char **v)
 		msg = str_bin(v[2]);
 		while (*msg)
 		{
-			if (*msg == 0)
+			usleep(500);
+			if (*msg == '0')
 				kill(pid, SIGUSR1);
 			else
 				kill(pid, SIGUSR2);
