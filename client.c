@@ -43,13 +43,24 @@ void	c_handler()
 
 int main(int c, char **v)
 {
+	int	pid;
+	char	*msg;
+
 	signal(SIGUSR2, c_handler);
 	if (c != 3)
 		write(2,"wrong amount of arguments.\nUsage: ./server <pid> <message> ", 60);
-else
+	else
 	{
-		message = 'a';
-		kill(ft_atoi(v[1]), SIGUSR1);
+		pid = ft_atoi(v[1]);
+		msg = str_bin(v[2]);
+		while (*msg)
+		{
+			if (*msg == 0)
+				kill(pid, SIGUSR1);
+			else
+				kill(pid, SIGUSR2);
+			msg++;
+		}
 	}
 	return (0);
 }
