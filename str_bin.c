@@ -6,7 +6,7 @@
 /*   By: lchokri <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 11:31:42 by lchokri           #+#    #+#             */
-/*   Updated: 2022/04/09 22:19:49 by lchokri          ###   ########.fr       */
+/*   Updated: 2022/04/11 03:23:22 by lchokri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ char	*str_bin(char *str)
 	i = 0;
 	b = (i + 1) * 8;
 	l = ft_strlen(str);
-	bin = ft_calloc(l * 8, sizeof(char));
+	bin = ft_calloc(l * 8 + 1, sizeof(char));
 	while (i < l)
 	{
 		b = (i + 1) * 8;
@@ -53,4 +53,3 @@ char	*str_bin(char *str)
 	}
 	return (bin);
 }
-
